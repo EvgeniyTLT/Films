@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Films</string>
+    <string name="button_register_title">Register</string>
+    <string name="login">Login</string>
+</resources>

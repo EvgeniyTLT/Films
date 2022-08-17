@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "392890069690",
+    "project_id": "films-bfffa",
+    "storage_bucket": "films-bfffa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392890069690:android:7f8efc62119ddd6f0b8883",
+        "android_client_info": {
+          "package_name": "com.example.films"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392890069690-0456fvsek0cshm270ni7gn87tdn1e164.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhYhWHVTt7pLP0klXeCco-WlD_d2aPX6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392890069690-0456fvsek0cshm270ni7gn87tdn1e164.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
