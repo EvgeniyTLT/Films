@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         btnClickMe.setOnClickListener {
             val registerButton = Intent(this, RegistrationActivity::class.java)
             startActivity(registerButton)
-            Toast.makeText(this, "Полина, Привет!!!!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Ты нажал на кнопку", Toast.LENGTH_SHORT).show()
         }
 
         val btnClickMe2 = findViewById<TextView>(R.id.main_activity_login_text)
