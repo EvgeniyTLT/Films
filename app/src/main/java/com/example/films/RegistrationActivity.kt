@@ -43,7 +43,9 @@ class RegistrationActivity : AppCompatActivity() {
                 val email = it.email.toString() // извлекаем email нашего пользователя
                 val uid = it.uid // извлекаем uid нашего пользователя
                 val firebaseUser = User(email, uid) //создаем новый обьект User c (email, uid)
-                database.child("users").child(uid).setValue(firebaseUser) // сохранение в БД пользователя
+                database.child("users").child(uid)
+                    .setValue(firebaseUser) // сохранение в БД пользователя
+                onBackPressed()
             }
 
             // ...
