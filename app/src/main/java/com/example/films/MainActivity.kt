@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
                     .setValue(firebaseUser) // сохранение в БД пользователя
                 val registerButton = Intent(this, MoviesActivity::class.java)
                 startActivity(registerButton)
-
             }
 
         } else { // если результат не ок, должны обработать ошибку
