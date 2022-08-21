@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             .setAvailableProviders(providers)
             .build() // создали интент для экрана firebase
         signInLauncher.launch(signInIntent) // запустили экран firebase auth
+
     }
 
     private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
@@ -52,11 +53,8 @@ class MainActivity : AppCompatActivity() {
                 val registerButton = Intent(this, MoviesActivity::class.java)
                 startActivity(registerButton)
             }
-
         } else { // если результат не ок, должны обработать ошибку
             Toast.makeText(this, "Ошибка регистрации", Toast.LENGTH_SHORT).show()
         }
     }
-
-
 }
