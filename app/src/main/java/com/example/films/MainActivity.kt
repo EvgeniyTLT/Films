@@ -57,4 +57,5 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Ошибка регистрации", Toast.LENGTH_SHORT).show()
         }
     }
+
 }
