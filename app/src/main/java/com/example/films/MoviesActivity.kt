@@ -2,6 +2,7 @@ package com.example.films
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
@@ -32,15 +33,15 @@ class MoviesActivity : AppCompatActivity() {
         val apiInterface = ApiInterface.create().getMovies()
 
         //apiInterface.enqueue( Callback<List<Movie>>())
-        apiInterface.enqueue( object : Callback<List<Movie>> {
-            override fun onResponse(call: Call<List<Movie>>?, response: Response<List<Movie>>?) {
-
+        apiInterface.enqueue( object : Callback<TestingDataClass> {
+            override fun onResponse(call: Call<TestingDataClass>?, response: Response<TestingDataClass>?) {
+                        Log.d("testLogs", "onResponse success ${response?.body()?.data?.first_name}")
 //                if(response?.body() != null)
 //                    recyclerAdapter.setMovieListItems(response.body()!!)
             }
 
-            override fun onFailure(call: Call<List<Movie>>?, t: Throwable?) {
-
+            override fun onFailure(call: Call<TestingDataClass>?, t: Throwable?) {
+                Log.d("testLogs", "onFailure: ${t?.message} ")
             }
         })
     }
