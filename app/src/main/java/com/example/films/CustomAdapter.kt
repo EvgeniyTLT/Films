@@ -21,7 +21,6 @@ class CustomAdapter(private val mList: List<Result>?) :
 //        holder.imageView.setImageResource(ItemsViewModel.image)
         holder.textView.text = ItemsViewModel?.title
     }
-
     override fun getItemCount(): Int {
         return mList!!.size
     }
