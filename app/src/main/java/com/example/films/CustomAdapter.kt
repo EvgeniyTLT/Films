@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomAdapter(private val mList: List<ItemsViewModel>) :
+class CustomAdapter(private val mList: List<Result>?) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -18,13 +18,13 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val ItemsViewModel = mList[position]
-        holder.imageView.setImageResource(ItemsViewModel.image)
-        holder.textView.text = ItemsViewModel.text
+        val ItemsViewModel = mList?.get(position)
+//        holder.imageView.setImageResource(ItemsViewModel.image)
+        holder.textView.text = ItemsViewModel?.title
     }
 
     override fun getItemCount(): Int {
-        return mList.size
+        return mList!!.size
     }
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageview)

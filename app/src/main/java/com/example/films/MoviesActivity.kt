@@ -27,20 +27,20 @@ class MoviesActivity : AppCompatActivity() {
                 )
             )
         }
-        val adapter = CustomAdapter(data)
-        recyclerview.adapter = adapter
 
-        val apiInterface = ApiInterface.create().getMovies()
+        val apiInterface = ApiInterface.create().getMovies("12790cecfabd1bf1230c24684b802223")
 
         //apiInterface.enqueue( Callback<List<Movie>>())
-        apiInterface.enqueue( object : Callback<TestingDataClass> {
-            override fun onResponse(call: Call<TestingDataClass>?, response: Response<TestingDataClass>?) {
-                        Log.d("testLogs", "onResponse success ${response?.body()?.data?.first_name}")
-//                if(response?.body() != null)
-//                    recyclerAdapter.setMovieListItems(response.body()!!)
+        apiInterface.enqueue(object : Callback<Movies> {
+            override fun onResponse(call: Call<Movies>?, response: Response<Movies>?) {
+                Log.d("testLogs", "onResponse success ${response?.body()?.results}")
+                val adapter = CustomAdapter(response?.body()?.results)
+                recyclerview.adapter = adapter
+
+//
             }
 
-            override fun onFailure(call: Call<TestingDataClass>?, t: Throwable?) {
+            override fun onFailure(call: Call<Movies>?, t: Throwable?) {
                 Log.d("testLogs", "onFailure: ${t?.message} ")
             }
         })
