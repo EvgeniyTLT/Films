@@ -16,7 +16,6 @@ class CustomAdapter(private val mList: List<Result>?) :
             .inflate(R.layout.card_view_design, parent, false)
         return ViewHolder(view)
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val ItemsViewModel = mList?.get(position)
 //        holder.imageView.setImageResource(ItemsViewModel.image)
