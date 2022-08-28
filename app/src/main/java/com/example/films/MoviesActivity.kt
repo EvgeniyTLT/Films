@@ -3,6 +3,7 @@ package com.example.films
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,10 +32,10 @@ class MoviesActivity : AppCompatActivity() {
         val apiInterface = ApiInterface.create().getMovies("12790cecfabd1bf1230c24684b802223")
 
         //apiInterface.enqueue( Callback<List<Movie>>())
-        apiInterface.enqueue(object : Callback<Movies> {
+        apiInterface.enqueue(object : Callback<Movies>, CustomAdapter.ItemClickListener {
             override fun onResponse(call: Call<Movies>?, response: Response<Movies>?) {
                 Log.d("testLogs", "onResponse success ${response?.body()?.results}")
-                val adapter = CustomAdapter(response?.body()?.results)
+                val adapter = CustomAdapter(response?.body()?.results, this)
                 recyclerview.adapter = adapter
 
 //
@@ -42,6 +43,10 @@ class MoviesActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<Movies>?, t: Throwable?) {
                 Log.d("testLogs", "onFailure: ${t?.message} ")
+            }
+
+            override fun onItemClick(position: Int) {
+                Toast.makeText(this@MoviesActivity, "click $position", Toast.LENGTH_SHORT).show()
             }
         })
     }
