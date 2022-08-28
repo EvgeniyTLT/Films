@@ -28,7 +28,6 @@ class MoviesActivity : AppCompatActivity() {
                 )
             )
         }
-
         val apiInterface = ApiInterface.create().getMovies("12790cecfabd1bf1230c24684b802223")
 
         //apiInterface.enqueue( Callback<List<Movie>>())

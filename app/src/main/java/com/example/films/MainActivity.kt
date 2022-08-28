@@ -15,7 +15,6 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
-
     private val signInLauncher = registerForActivityResult( //  создали объект авторизации
         FirebaseAuthUIActivityResultContract()
     ) { res ->
@@ -36,9 +35,7 @@ class MainActivity : AppCompatActivity() {
             .setAvailableProviders(providers)
             .build() // создали интент для экрана firebase
         signInLauncher.launch(signInIntent) // запустили экран firebase auth
-
     }
-
     private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
         val response = result.idpResponse // результат с экрана Firebase auth
         if (result.resultCode == RESULT_OK) { // если результат ОК, то вызывается код, иначе esle
