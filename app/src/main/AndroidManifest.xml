@@ -4,8 +4,8 @@
     package="com.example.films">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <application
 
+    <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Films"
         tools:targetApi="31">
+        <activity
+            android:name=".MoviesDetailsActivity"
+            android:exported="false" />
         <activity
             android:name=".MoviesActivity"
             android:exported="false" />
