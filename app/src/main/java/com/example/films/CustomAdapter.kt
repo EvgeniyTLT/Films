@@ -32,12 +32,14 @@ class CustomAdapter(private val mList: List<Result>?, val mItemClickListener: It
         return mList!!.size
     }
 
-     inner class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+    inner class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageview)
 
-        init{
-            ItemView.setOnClickListener{
-                mItemClickListener.onItemClick(adapterPosition)
+        init {
+            ItemView.setOnClickListener {
+                mList?.get(position)?.id?.let { it ->
+                    mItemClickListener.onItemClick(it)
+                }
             }
         }
     }
