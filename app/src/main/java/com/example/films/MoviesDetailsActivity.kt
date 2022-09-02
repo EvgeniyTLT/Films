@@ -38,7 +38,7 @@ class MoviesDetailsActivity : AppCompatActivity() {
             overview.text = response?.body()?.overview
 
             Picasso.get().load("https://image.tmdb.org/t/p/w500" + response?.body()?.backdrop_path).into(banner)
-                Log.d("imMy", "${response?.body()?.backdrop_path}")
+
             }
 
             override fun onFailure(call: Call<MoviesDetails>, t: Throwable) {
