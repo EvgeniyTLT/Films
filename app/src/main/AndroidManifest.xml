@@ -15,16 +15,16 @@
         android:theme="@style/Theme.Films"
         tools:targetApi="31">
         <activity
-            android:name=".MoviesDetailsActivity"
+            android:name=".view.adapters.MoviesDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".MoviesActivity"
+            android:name=".view.adapters.MoviesActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.adapters.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

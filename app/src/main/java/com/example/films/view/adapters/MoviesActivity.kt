@@ -1,4 +1,4 @@
-package com.example.films
+package com.example.films.view.adapters
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 
 import androidx.recyclerview.widget.RecyclerView
+import com.example.films.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,7 +40,6 @@ class MoviesActivity : AppCompatActivity() {
                 val adapter = CustomAdapter(response?.body()?.results, this)
                 recyclerview.adapter = adapter
 
-//
             }
 
             override fun onFailure(call: Call<Movies>?, t: Throwable?) {

@@ -1,14 +1,16 @@
-package com.example.films
+package com.example.films.view.adapters
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.films.ApiInterface
+import com.example.films.MoviesDetails
+import com.example.films.R
 import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 
 class MoviesDetailsActivity : AppCompatActivity() {
